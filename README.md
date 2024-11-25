@@ -1,5 +1,5 @@
 # 19:Comparar usos de this: "this(...)" e "this." (criar e executar programas de exemplo)
-[Codespace](https://jubilant-cod-74v9q5v45grcr67x.github.dev/)
+
 ### this(...) X this.
 #### this(...)
 O operador this(...) chama o construtor principal da classe, pode ser usado em um construtor alternativo para evitar repetições. Nele passamos todos os parâmetros necessários para o uso do construtor padrão, como exemplo:
@@ -24,7 +24,7 @@ class Pessoa {
     }
 }
 
-public class Main {
+public class PessoaMain {
     public static void main(String[] args) {
         Pessoa person1 = new Pessoa("Alice", 30);
         Pessoa person2 = new Pessoa("Bob");
@@ -41,7 +41,7 @@ O operador this. serve quando queremos fazer referência à um atributo do objet
 class Calculadora {
     private int resultado = 0;
 
-    public void soma(int resultado {
+    public void soma(int resultado) {
         this.resultado += resultado; // Referencia a variável de instância
     }
 
@@ -50,14 +50,18 @@ class Calculadora {
     }
 }
 
-public class Main {
+public class CalculadoraMain {
     public static void main(String[] args) {
         Calculadora calc = new Calculadora();
+        calc.soma(1);
+        System.out.println("Resultado: " + calc.getResultado());
         calc.soma(2);
-        calc.soma(40);
+        System.out.println("Resultado: " + calc.getResultado());
+        calc.soma(3);
         System.out.println("Resultado: " + calc.getResultado());
     }
 }
 ```
 
 ### Referências
+https://stackoverflow.com/questions/3728062/what-is-the-meaning-of-this-in-java
